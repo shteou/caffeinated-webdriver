@@ -1,11 +1,15 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jdk
 
 LABEL maintainer="shteou@gmail.com"
 
-RUN apk add --update chromium \
-  maven \
-  && rm -rf /var/cache/apk/*
+RUN apt-get update && apt install -y --no-install-recommends \
+  firefox-esr \
+  maven
+
+RUN useradd -ms /bin/bash webdriver
 
 COPY loop.sh /
+
+USER webdriver
 
 CMD sh /loop.sh
