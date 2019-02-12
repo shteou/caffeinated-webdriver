@@ -4,6 +4,7 @@ LABEL maintainer="shteou@gmail.com"
 
 RUN apt-get update && apt install -y --no-install-recommends \
   firefox-esr \
+  chromium \
   maven
 
 RUN useradd -ms /bin/bash webdriver
