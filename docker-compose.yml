@@ -1,6 +1,0 @@
----
-my-service:
-  image: shteou/chromium-coffee:1.0
-  volumes:
-    - ./workspace:/workspace
-    - /home/vagrant/.m2:/home/webdriver/.m2
